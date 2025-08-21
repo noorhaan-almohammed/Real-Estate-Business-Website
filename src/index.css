@@ -122,8 +122,8 @@
 
 .ripple {
   position: fixed;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: #a685fa;
   border-radius: 50%;
   transform: scale(0);
