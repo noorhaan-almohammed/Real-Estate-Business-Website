@@ -16,6 +16,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import Loader from "./components/kit/Loader";
+// import BackToTop from "./components/kit/BackToTop";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -39,6 +40,7 @@ function App() {
           </div>
         }
       >
+        {/* <BackToTop/> */}
         <Routes>
           {/* Main layout wrapper */}
           <Route element={<MainLayout />}>

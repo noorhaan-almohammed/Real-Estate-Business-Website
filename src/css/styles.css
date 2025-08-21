@@ -159,8 +159,8 @@
 }
 
 .scroll {
-  animation: scroll 15s linear infinite;
-  -webkit-animation: scroll 15s linear infinite;
+  animation: scroll 30s linear infinite;
+  -webkit-animation: scroll 30s linear infinite;
 }
 
 .clip {
@@ -175,6 +175,9 @@
 .cursor-custom-default button,
 .cursor-custom-default .cursor-pointer {
   cursor: url("/assets/icons/cursor-pointer.svg"), pointer !important;
+}
+.BackToTop:hover .arrow{
+  animation: back-to-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes neon-pulse {
