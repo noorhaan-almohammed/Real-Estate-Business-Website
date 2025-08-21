@@ -474,3 +474,24 @@
 .futuristic-pattern {
   filter: url(#advanced-texture);
 }
+
+/* onClick Event */
+
+.ripple {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: #a685fa;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.25s linear forwards;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
