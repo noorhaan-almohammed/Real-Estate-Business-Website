@@ -1,7 +1,7 @@
 import { contactFormSection, contactFormSectionHeader, propertiesData } from "../data/Properties/PropertisData";
 import ContactForm from "../sections/Contact/ContactForm";
 import PropertiesSection from "../sections/PropertiesPageSections/PropertiesSection";
-import SearchAndFiltersSection from "../sections/PropertiesPageSections/SearchAndFiltersSection";
+import SearchAndFiltersSection from "../sections/PropertiesPageSections/SearchandFiltersSection";
 
 import HeaderHero from "../sections/sharedSections/HeaderHero";
 
