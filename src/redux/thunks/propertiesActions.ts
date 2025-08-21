@@ -8,7 +8,6 @@ export const subscribeToProperties = () => (dispatch: AppDispatch) => {
     dispatch(setLoading(true));
     const q = query(collection(db, "properties"), orderBy("createdAt", "desc"));
 
-    // onSnapshot = Real-time updates
     return onSnapshot(q, (snapshot) => {
       const properties: Property[] = snapshot.docs.map((doc) => ({
         id: doc.id,
