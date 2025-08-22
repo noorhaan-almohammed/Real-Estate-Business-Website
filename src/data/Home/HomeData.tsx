@@ -207,44 +207,6 @@ export const testimonialsSectionData: TestimonialsSectionType = {
     text: "View All Testimonials",
     link: "#",
   },
-  testimonials: [
-    {
-      id: "testimonial-1",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Exceptional Service!",
-      text: "Our experience with Estatein was outstanding. Their teams dedication and professionalism made finding our dream home a breeze. Highly recommended!",
-      author: {
-        name: "Wade Warren",
-        location: "USA, California",
-        avatar: "/assets/images/Home/person1.webp",
-      },
-    },
-    {
-      id: "testimonial-2",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Efficient and Reliable",
-      text: "Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price. We couldn't be happier with the results.",
-      author: {
-        name: "Emelie Thomson",
-        location: "USA, Florida",
-        avatar: "/assets/images/Home/person2.webp",
-      },
-    },
-    {
-      id: "testimonial-3",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Trusted Advisors",
-      text: "The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!",
-      author: {
-        name: "John Mans",
-        location: "USA, Nevada",
-        avatar: "/assets/images/Home/person3.webp",
-      },
-    },
-  ],
 };
 
 // Frequently Asked Questions Data

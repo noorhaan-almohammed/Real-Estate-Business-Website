@@ -27,7 +27,7 @@ export const subscribeToProperties = () => (dispatch: AppDispatch) => {
   }
 };
 
-/**********/
+/** get Property By Id **/
 export const getPropertyById = (id: string) => async (dispatch: AppDispatch) => {
   try {
     dispatch(setLoading(true));
