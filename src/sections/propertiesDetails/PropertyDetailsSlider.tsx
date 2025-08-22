@@ -46,7 +46,7 @@ function PropertyDetailsSlider({data}:{data:PropertyDetailsType}) {
                 {/* title and price */}
                 <div className="flex  flex-col md:flex-row md:items-center gap-5 gap-y-2 ">
                     <div className=" min-w-max">
-                        <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold  text-mainText"  data-aos="fade-right">{data.title}</h3>
+                        <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold  text-mainText"  data-aos="fade-up">{data.title}</h3>
                     </div>
                     <div className="flex items-center gap-5 w-full md:w-[81.796%]">
                         <p className="flex items-center gap-2 p-2 xl:p-2.5 border border-Grey-10 font-medium text-sm xl:text-lg
@@ -54,7 +54,7 @@ function PropertyDetailsSlider({data}:{data:PropertyDetailsType}) {
                             xl:rounded-lg  w-fit md:mr-auto" data-aos="fade-up">
                             <Location/>{data.location}
                         </p>
-                        <div className="flex md:flex-col flew-row md:items-start gap-1 items-center"  data-aos="fade-left">
+                        <div className="flex md:flex-col flew-row md:items-start gap-1 items-center"  data-aos="fade-down">
                             <span className="text-sm font-medium text-secText xl:text-lg">Price</span>
                             <p className="text-lg font-semibold text-mainText md:text-xl xl:text-2xl">{data.price}</p>
                         </div>

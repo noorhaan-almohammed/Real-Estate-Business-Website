@@ -22,7 +22,7 @@ function OurValueSection({ data }: { data: OurValueSectionType }) {
               title={item.title}
               description={item.description}
               rightBorder={index % 2 === 0}
-              data-aos="zoom-out"
+              data-aos="fade-up"
               data-aos-delay={index * 100}
             />
 
