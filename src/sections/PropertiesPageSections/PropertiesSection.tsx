@@ -35,9 +35,10 @@ function PropertiesSection({ data }: { data: PropertySliderSection }) {
         cards={
           loading
             ? Array.from({ length: 3 }).map((_, i) => (
-                <PropertiesCardSkeleton key={i} />
-              ))
-            : items.map((property) => (
+              <PropertiesCardSkeleton key={i} />
+            ))
+            : items.length > 0
+              ? items.map((property) => (
                 <PropertiesCard
                   image={property.imageUrls[0]}
                   title={property.name}
@@ -48,6 +49,9 @@ function PropertiesSection({ data }: { data: PropertySliderSection }) {
                   btnLink={`/properties/${property.id}`}
                   btnText={`View Property Details`}
                 />
+              ))
+              : Array.from({ length: 3 }).map((_, i) => (
+                <PropertiesCardSkeleton key={i} />
               ))
         }
       />

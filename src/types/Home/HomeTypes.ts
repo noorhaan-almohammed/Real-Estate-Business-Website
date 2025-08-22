@@ -63,22 +63,15 @@ export interface FeaturedPropertiesSectionType {
   button: FeaturedPropertyButton;
   properties: FeaturedProperty[];
 }
-
-// Author of testimonial
-export interface TestimonialAuthor {
-  name: string;
-  location: string;
-  avatar: string;
-}
-
-// فرد من التقييمات
 export interface Testimonial {
   id: string;
   icon: string;
   rating: number;
   title: string;
   text: string;
-  author: TestimonialAuthor;
+  name: string;
+  location: string;
+  avatar: string;
 }
 
 export interface TestimonialsSectionType {
@@ -88,7 +81,6 @@ export interface TestimonialsSectionType {
     text: string;
     link: string;
   };
-  testimonials: Testimonial[];
 }
 
 export interface FaqItem {

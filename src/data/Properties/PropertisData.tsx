@@ -205,7 +205,7 @@ export const propertiesData: PropertiesData = {
         placeholder: "Location",
         type: "select",
         name: "location",
-        options: ["Dubai", "New York", "London", "Cairo"],
+        options: [ "Malibu, California","New York, USA","Paris, France","Cairo, Egypt"],
         icon: <Location />,
       },
       {
