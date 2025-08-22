@@ -1,3 +1,4 @@
+import type { Timestamp } from "firebase/firestore";
 import type { JSX, ReactNode } from "react";
 
 //Home Section
@@ -87,6 +88,8 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
+  createdAt: Timestamp;
+  updateddAt: Timestamp;
   btnText:string;
   readMoreLink: string;
 }
