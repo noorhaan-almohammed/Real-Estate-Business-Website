@@ -53,7 +53,7 @@ const TextInput: React.FC<{ field: BaseTextField }> = ({ field }) => {
             name={field.name}
             type={field.type}
             placeholder={field.placeholder}
-            className="flex-1 bg-transparent text-White dark:placeholder:text-Grey-40 px-5 py-4 xl:py-6 text-sm/[20px] xl:text-lg/[20px] outline-none"
+            className="flex-1 bg-transparent text-White dark:placeholder:text-Grey-40 px-3.5 md:px-4 xl:px-5 py-4 xl:py-6 text-sm/[20px] xl:text-lg/[20px] outline-none placeholder:whitespace-nowrap"
             required={field.required}
             aria-required={field.required}
             aria-describedby={field.label ? `${field.id}-label` : undefined}

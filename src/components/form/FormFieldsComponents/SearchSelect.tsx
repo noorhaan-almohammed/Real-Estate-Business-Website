@@ -52,7 +52,7 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
   return (
     <div className="flex flex-col gap-2.5 md:gap-3.5 xl:gap-4 w-full relative">
       <div ref={selectRef} className="relative" data-select-container>
-        <div className="flex py-3 px-3.5 xl:p-5 bg-Grey-08 rounded-xl border border-Grey-15 max-w-full">
+        <div className="flex py-3 px-3.5 md:px-4 xl:px-5 bg-Grey-08 rounded-xl border border-Grey-15 max-w-full">
           <div className="flex gap-2.5">
             <div>{field.icon}</div>
             <div className="pl-2.5 border-l border-Grey-15">
@@ -64,7 +64,7 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
                 placeholder={field.placeholder}
                 readOnly
                 onClick={toggleList}
-                className={`dark:placeholder:text-Grey-40 rounded-md xl:rounded-lg text-sm xl:text-lg outline-none transition-all duration-200 cursor-pointer ${
+                className={`dark:placeholder:text-Grey-40 rounded-md xl:rounded-lg text-sm xl:text-lg outline-none transition-all duration-200 cursor-pointer whitespace-nowrap ${
                   showList ? "border-Purple-60" : ""
                 }`}
                 required={field.required}
@@ -88,7 +88,7 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
             <button
               type="button"
               onClick={handleClear}
-              className="w-full px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-white bg-Purple-60
+              className="w-full px-3.5 md:px-4 xl:px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-white bg-Purple-60
                hover:bg-Purple-70 transition-colors duration-200 first:rounded-t-md xl:first:rounded-t-lg"
             >
               Clear
@@ -99,7 +99,7 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
                 key={option}
                 type="button"
                 onClick={() => handleOptionClick(option)}
-                className="w-full px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-White hover:bg-Grey-15 transition-colors duration-200"
+                className="w-full px-3.5 md:px-4 xl:px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-White hover:bg-Grey-15 transition-colors duration-200"
               >
                 {option}
               </button>
