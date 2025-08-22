@@ -152,7 +152,7 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                                     Search Results
                                 </h2>
                                 <p className="text-Grey-60">
-                                    Found {filtered.length} property{filtered.length !== 1 ? "ies" : "y"}
+                                    Found {filtered.length} propert{filtered.length !== 1 ? "ies" : "y"}
                                     {searchTerm && ` matching "${searchTerm}"`}
                                 </p>
                             </div>
@@ -177,35 +177,88 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                         </div>
 
                         {totalPages > 1 && (
-                            <div className="flex justify-center items-center gap-2">
-                                <button
-                                    onClick={() => handlePageChange(currentPage - 1)}
-                                    disabled={currentPage === 1}
-                                    className="px-4 py-2 rounded-lg border border-Grey-15 text-Grey-60 hover:bg-Grey-10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                                >
-                                    Previous
-                                </button>
+                            <div className="mt-12 flex flex-col items-center gap-6">
+                                {/* Page Info */}
+                                <div className="text-center">
+                                    <p className="text-Grey-60 text-sm md:text-base">
+                                        Showing page <span className="text-White font-semibold">{currentPage}</span> of <span className="text-White font-semibold">{totalPages}</span>
+                                    </p>
+                                </div>
 
-                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                {/* Pagination Controls */}
+                                <div className="flex items-center gap-3 md:gap-4">
+                                    {/* Previous Button */}
                                     <button
-                                        key={page}
-                                        onClick={() => handlePageChange(page)}
-                                        className={`px-4 py-2 rounded-lg border transition-colors ${currentPage === page
-                                            ? "bg-Purple-60 text-white border-Purple-60"
-                                            : "border-Grey-15 text-Grey-60 hover:bg-Grey-10"
-                                            }`}
+                                        onClick={() => handlePageChange(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                        className="group flex items-center gap-2 px-4 py-3 md:px-5 md:py-3.5 rounded-xl border border-Grey-15 text-Grey-60 hover:bg-Grey-10 hover:border-Purple-60/30 hover:text-Purple-75 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-Grey-15 disabled:hover:text-Grey-60 transition-all duration-200"
                                     >
-                                        {page}
+                                        <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                        <span className="hidden sm:inline">Previous</span>
                                     </button>
-                                ))}
 
-                                <button
-                                    onClick={() => handlePageChange(currentPage + 1)}
-                                    disabled={currentPage === totalPages}
-                                    className="px-4 py-2 rounded-lg border border-Grey-15 text-Grey-60 hover:bg-Grey-10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                                >
-                                    Next
-                                </button>
+                                    {/* Page Numbers */}
+                                    <div className="flex items-center gap-1 md:gap-2">
+                                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                                            // Show first page, last page, current page, and pages around current
+                                            const shouldShow = 
+                                                page === 1 || 
+                                                page === totalPages || 
+                                                page === currentPage || 
+                                                Math.abs(page - currentPage) <= 1;
+
+                                            if (!shouldShow) {
+                                                if (page === 2 || page === totalPages - 1) {
+                                                    return <span key={page} className="px-2 text-Grey-40">...</span>;
+                                                }
+                                                return null;
+                                            }
+
+                                            return (
+                                                <button
+                                                    key={page}
+                                                    onClick={() => handlePageChange(page)}
+                                                    className={`relative px-3 py-2 md:px-4 md:py-2.5 rounded-lg border transition-all duration-200 ${
+                                                        currentPage === page
+                                                            ? "bg-Purple-60 text-white border-Purple-60 shadow-[0_0_20px_rgba(112,59,247,0.3)] scale-105"
+                                                            : "border-Grey-15 text-Grey-60 hover:bg-Grey-10 hover:border-Purple-60/30 hover:text-Purple-75"
+                                                    }`}
+                                                >
+                                                    {page}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Next Button */}
+                                    <button
+                                        onClick={() => handlePageChange(currentPage + 1)}
+                                        disabled={currentPage === totalPages}
+                                        className="group flex items-center gap-2 px-4 py-3 md:px-5 md:py-3.5 rounded-xl border border-Grey-15 text-Grey-60 hover:bg-Grey-10 hover:border-Purple-60/30 hover:text-Purple-75 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-Grey-15 disabled:hover:text-Grey-60 transition-all duration-200"
+                                    >
+                                        <span className="hidden sm:inline">Next</span>
+                                        <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                {/* Page Indicators */}
+                                <div className="flex items-center gap-2">
+                                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                        <button
+                                            key={page}
+                                            onClick={() => handlePageChange(page)}
+                                            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-200 ${
+                                                currentPage === page
+                                                    ? "bg-Purple-60 scale-125 shadow-[0_0_10px_rgba(112,59,247,0.5)]"
+                                                    : "bg-Grey-30 hover:bg-Grey-40"
+                                            }`}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         )}
                     </>
