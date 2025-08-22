@@ -43,7 +43,7 @@ function SearchAndFiltersSection({ onSearchResults }: SearchAndFiltersSectionPro
   };
 
   return (
-    <Container className="mt-[-40px] md:mt-[-120px] xl:mt-[-150px] lg:translate-y-[-26.1538%]">
+    <Container className="z-20 mt-[-40px] lg:mt-[-120px] xl:mt-[-150px] lg:translate-y-[-26.1538%]">
       <SearchAndFilters
         searchData={propertiesData.searchSection}
         filterData={propertiesData.searchFilterSection}

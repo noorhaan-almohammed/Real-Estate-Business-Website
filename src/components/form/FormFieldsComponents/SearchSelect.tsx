@@ -73,13 +73,13 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
                     </button>
                 </div>
                 {showList && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-Grey-10 border border-Grey-15 rounded-md xl:rounded-lg shadow-lg z-[9999] max-h-48 overflow-y-auto">
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-Grey-10 border border-Grey-15 rounded-md xl:rounded-lg shadow-lg z-10 max-h-42 overflow-y-auto">
                         {field.options?.map((option) => (
                             <button
                                 key={option}
                                 type="button"
                                 onClick={() => handleOptionClick(option)}
-                                className="w-full px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-White hover:bg-Grey-15 transition-colors duration-200 first:rounded-t-md xl:first:rounded-t-lg last:rounded-b-md xl:last:rounded-b-lg"
+                                className="z-20 w-full px-5 py-3 xl:py-4 text-left text-sm/[20px] xl:text-lg/[20px] text-White hover:bg-Grey-15 transition-colors duration-200 first:rounded-t-md xl:first:rounded-t-lg last:rounded-b-md xl:last:rounded-b-lg"
                             >
                                 {option}
                             </button>

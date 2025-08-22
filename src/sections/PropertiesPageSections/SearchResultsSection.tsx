@@ -98,17 +98,24 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
     }
 
     const handleClearFiltersInternal = () => {
-        setShowResults(false)
-        setCurrentPage(1)
-        setIsSearching(false)
+        // إعادة كل الفلاتر والحقل البحثي إلى الحالة الافتراضية
         onClearFilters()
+        setCurrentPage(1)
+        setShowResults(false)
+        setIsSearching(false)
+
+        const searchInput = document.querySelector<HTMLInputElement>('input[type="text"]')
+        if (searchInput) searchInput.value = ""
+
+        const selects = document.querySelectorAll<HTMLSelectElement>("select")
+        selects.forEach((sel) => (sel.value = ""))
     }
 
     if (!hasSearched || !showResults) return null
 
     return (
         <Container>
-            <div className="-mt-10 md:-mt-20 xl:-mt-37.5">
+            <div className="-mt-10 md:-mt-20 xl:-mt-35">
                 {error && (
                     <div className="text-center mb-8">
                         <p className="text-Red-60 text-lg">Error: {error}</p>
@@ -122,9 +129,25 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                         ))}
                     </div>
                 ) : filtered.length === 0 ? (
-                    <div className="text-center py-20">
-                        <h3 className="text-2xl font-semibold text-Grey-60 mb-4">No Properties Found</h3>
-                        <p className="text-Grey-60">No properties match your search criteria.</p>
+                    <div className="flex flex-col justify-center items-center">
+                        <div className="w-full flex justify-between items-center">
+                            <div>
+                                <h2 className="text-2xl md:text-3xl xl:text-4xl font-semibold mb-2">
+                                    Search Results
+                                </h2>
+                                
+                            </div>
+                            <button
+                                onClick={handleClearFiltersInternal}
+                                className="text-sm xl:text-lg cursor-pointer px-3 py-2.5 xs:px-5 xs:py-3.5 xl:px-6 xl:py-4.5 rounded-lg xl:rounded-[10px] flex items-center justify-center font-medium bg-Grey-15 text-Grey-60 hover:bg-gradient-to-br hover:from-40% hover:from-Grey-20/65 hover:via-50% hover:via-Grey-25 hover:to-70% hover:to-Grey-20/65 bg-[length:200%_200%] bg-[position:0%_0%] transition-[background-position] duration-500 ease-in-out hover:bg-[position:100%_100%]"
+                            >
+                                Clear Filters
+                            </button>
+                        </div>
+                        <div className="text-center py-20">
+                            <h3 className="text-2xl font-semibold text-Grey-60 mb-4">No Properties Found</h3>
+                            <p className="text-Grey-60">No properties match your search criteria.</p>
+                        </div>
                     </div>
                 ) : (
                     <>
@@ -140,13 +163,13 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                             </div>
                             <button
                                 onClick={handleClearFiltersInternal}
-                                className="text-sm xl:text-lg text-nowrap cursor-pointer px-3 py-2.5 xs:px-5 xs:py-3.5 xl:px-6 xl:py-4.5 rounded-lg xl:rounded-[10px] flex items-center justify-center font-medium bg-Grey-15 text-Grey-60 hover:bg-gradient-to-br hover:from-40% hover:from-Grey-20/65 hover:via-50% hover:via-Grey-25 hover:to-70% hover:to-Grey-20/65 bg-[length:200%_200%] bg-[position:0%_0%] transition-[background-position] duration-500 ease-in-out hover:bg-[position:100%_100%]"
+                                className="text-sm xl:text-lg cursor-pointer px-3 py-2.5 xs:px-5 xs:py-3.5 xl:px-6 xl:py-4.5 rounded-lg xl:rounded-[10px] flex items-center justify-center font-medium bg-Grey-15 text-Grey-60 hover:bg-gradient-to-br hover:from-40% hover:from-Grey-20/65 hover:via-50% hover:via-Grey-25 hover:to-70% hover:to-Grey-20/65 bg-[length:200%_200%] bg-[position:0%_0%] transition-[background-position] duration-500 ease-in-out hover:bg-[position:100%_100%]"
                             >
                                 Clear Filters
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 -z-1">
                             {currentItems.map((property) => (
                                 <PropertiesCard
                                     key={property.id}
@@ -176,11 +199,10 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                                     <button
                                         key={page}
                                         onClick={() => handlePageChange(page)}
-                                        className={`px-4 py-2 rounded-lg border transition-colors ${
-                                            currentPage === page
+                                        className={`px-4 py-2 rounded-lg border transition-colors ${currentPage === page
                                                 ? "bg-Purple-60 text-white border-Purple-60"
                                                 : "border-Grey-15 text-Grey-60 hover:bg-Grey-10"
-                                        }`}
+                                            }`}
                                     >
                                         {page}
                                     </button>
