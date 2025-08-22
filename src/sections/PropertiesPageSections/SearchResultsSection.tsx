@@ -5,6 +5,7 @@ import PropertiesCardSkeleton from "../../components/cards/PropertiesCardSkeleto
 
 import { useSelector } from "react-redux"
 import type { RootState } from "../../redux/store"
+import Button from "../../components/sharedComponents/Button"
 
 interface SearchResultsSectionProps {
     searchTerm: string
@@ -98,7 +99,6 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
     }
 
     const handleClearFiltersInternal = () => {
-        // إعادة كل الفلاتر والحقل البحثي إلى الحالة الافتراضية
         onClearFilters()
         setCurrentPage(1)
         setShowResults(false)
@@ -135,14 +135,9 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-semibold mb-2">
                                     Search Results
                                 </h2>
-                                
+
                             </div>
-                            <button
-                                onClick={handleClearFiltersInternal}
-                                className="text-sm xl:text-lg cursor-pointer px-3 py-2.5 xs:px-5 xs:py-3.5 xl:px-6 xl:py-4.5 rounded-lg xl:rounded-[10px] flex items-center justify-center font-medium bg-Grey-15 text-Grey-60 hover:bg-gradient-to-br hover:from-40% hover:from-Grey-20/65 hover:via-50% hover:via-Grey-25 hover:to-70% hover:to-Grey-20/65 bg-[length:200%_200%] bg-[position:0%_0%] transition-[background-position] duration-500 ease-in-out hover:bg-[position:100%_100%]"
-                            >
-                                Clear Filters
-                            </button>
+                            <Button content="Clear filters" onClick={handleClearFiltersInternal} withBorder />
                         </div>
                         <div className="text-center py-20">
                             <h3 className="text-2xl font-semibold text-Grey-60 mb-4">No Properties Found</h3>
@@ -161,12 +156,8 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                                     {searchTerm && ` matching "${searchTerm}"`}
                                 </p>
                             </div>
-                            <button
-                                onClick={handleClearFiltersInternal}
-                                className="text-sm xl:text-lg cursor-pointer px-3 py-2.5 xs:px-5 xs:py-3.5 xl:px-6 xl:py-4.5 rounded-lg xl:rounded-[10px] flex items-center justify-center font-medium bg-Grey-15 text-Grey-60 hover:bg-gradient-to-br hover:from-40% hover:from-Grey-20/65 hover:via-50% hover:via-Grey-25 hover:to-70% hover:to-Grey-20/65 bg-[length:200%_200%] bg-[position:0%_0%] transition-[background-position] duration-500 ease-in-out hover:bg-[position:100%_100%]"
-                            >
-                                Clear Filters
-                            </button>
+                            <Button content="Clear filters" onClick={handleClearFiltersInternal} withBorder />
+
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 -z-1">
@@ -200,8 +191,8 @@ function SearchResultsSection({ searchTerm, selectValues, hasSearched, onClearFi
                                         key={page}
                                         onClick={() => handlePageChange(page)}
                                         className={`px-4 py-2 rounded-lg border transition-colors ${currentPage === page
-                                                ? "bg-Purple-60 text-white border-Purple-60"
-                                                : "border-Grey-15 text-Grey-60 hover:bg-Grey-10"
+                                            ? "bg-Purple-60 text-white border-Purple-60"
+                                            : "border-Grey-15 text-Grey-60 hover:bg-Grey-10"
                                             }`}
                                     >
                                         {page}
