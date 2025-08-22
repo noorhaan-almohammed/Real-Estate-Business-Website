@@ -12,6 +12,8 @@ const Properties = lazy(() => import("./pages/Properties"));
 const PropertyDetails = lazy(() => import("./pages/PropertyDetails"));
 const Services = lazy(() => import("./pages/Services"));
 const Contact = lazy(() => import("./pages/Contact"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -25,6 +27,8 @@ const routes = [
   { path: "/properties/:id", element: <PropertyDetails /> },
   { path: "/services", element: <Services /> },
   { path: "/contact", element: <Contact /> },
+  { path: "/faq", element: <FAQ /> },
+  { path: "/testimonials", element: <Testimonials /> },
   { path: "/terms", element: <Terms /> },
   { path: "/privacy", element: <Privacy /> },
 ];
