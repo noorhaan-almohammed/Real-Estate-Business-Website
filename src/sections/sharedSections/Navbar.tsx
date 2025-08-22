@@ -35,7 +35,6 @@ const Navbar = (): JSX.Element => {
   }, []);
   const toggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
-    scrollTop();
   };
 
   const handleOverlayClick = (e: MouseEvent<HTMLDivElement>): void => {
