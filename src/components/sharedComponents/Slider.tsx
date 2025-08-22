@@ -70,9 +70,6 @@ export default function Slider({
         {visibleCards.map((card, index) => (
             <div
               key={index}
-            data-aos="fade-down"
-            data-aos-duration="800"
-            data-aos-delay={index * 100}
             className="flex-1 min-w-0 flex"
           >
             {card}

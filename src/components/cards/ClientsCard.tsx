@@ -5,9 +5,9 @@ type Props = {
   testimonial: Testimonial;
 };
 
-const Clients: React.FC<Props> = ({ testimonial ,...aos}) => {
+const Clients: React.FC<Props> = ({ testimonial }) => {
   return (
-    <div className="bg-Grey-08 border border-Grey-15 rounded-xl p-7.5 md:p-10 xl:p-12.5 flex flex-col justify-between gap-6 md:gap-7.5 xl:gap-10" {...aos}>
+    <div className="bg-Grey-08 border border-Grey-15 rounded-xl p-7.5 md:p-10 xl:p-12.5 flex flex-col justify-between gap-6 md:gap-7.5 xl:gap-10" >
       <div className="flex gap-2 xl:gap-2.5">
         {Array.from({ length: testimonial?.rating }).map((_, i) => (
           <div
