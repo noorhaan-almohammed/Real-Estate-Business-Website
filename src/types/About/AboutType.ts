@@ -46,16 +46,18 @@ export interface NavigatingEstateinExperienceSectionType {
 
 // Meet the Estatein Team card type
 
-export interface MeetEstateinTeamCard {
+export interface TeamMember {
   id: string;
   image: string;
   name: string;
   job: string;
+  createdAt?: Timestamp;
+  updateddAt?: Timestamp;
 }
 export interface MeetEstateinTeamCardSectionType {
   headline: string;
   description: string;
-  properties: MeetEstateinTeamCard[];
+  properties: TeamMember[];
 }
 
 // Our Valued Clients card type
