@@ -32,6 +32,7 @@ const routes = [
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <ScrollToHash /> 
       <Suspense
         fallback={
@@ -70,6 +71,18 @@ const ScrollToHash = () => {
       }
     }
   }, [hash]);
+
+  return null;
+};
+
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [pathname, hash]);
 
   return null;
 };
