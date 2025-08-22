@@ -4,9 +4,9 @@ export type HowItWorksCardProps = {
   description: string;
 };
 
-const HowItWorksCard = ({ step, title, description }: HowItWorksCardProps) => {
+const HowItWorksCard = ({ step, title, description ,...aos}: HowItWorksCardProps) => {
   return (
-    <div className="w-full h-full flex flex-col relative group">
+    <div className="w-full h-full flex flex-col relative group" {...aos}>
       <h4 className=" text-base xl:text-[20px] text-White leading-[150%] font-medium px-4 py-3.5 xl:px-5 xl:py-4 border-l border-Purple-60">
         Step {String(step).padStart(2, "0")}
       </h4>

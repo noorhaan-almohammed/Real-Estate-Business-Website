@@ -15,10 +15,10 @@ const Hero = () => {
       {/* Left Content */}
       <div className="h-full w-full max-lg:mb-10 lg:w-[43.1171%] flex flex-col gap-10 lg:gap-12.5 xl:gap-15">
         <div className="flex flex-col gap-4 lg:gap-6">
-          <h2 className="text-2xl lg:text-[46px] xl:text-[60px] text-White font-semibold leading-[120%] tracking-[0]">
+          <h2 className="text-2xl lg:text-[46px] xl:text-[60px] text-White font-semibold leading-[120%] tracking-[0]" data-aos="fade-right">
             {headline}
           </h2>
-          <p className="font-medium text-[18px] text-Grey-60 leading-[150%] tracking-[0] lg:text-lg">
+          <p className="font-medium text-[18px] text-Grey-60 leading-[150%] tracking-[0] lg:text-lg" data-aos="fade-left">
             {description}
           </p>
         </div>
@@ -49,6 +49,7 @@ const Hero = () => {
 
           {/* Foreground Image - contain */}
           <img
+            data-aos="fade-up"
             src={heroImage}
             alt="hero"
             className="absolute left-1/2 bottom-0 translate-x-[-50%] object-bottom inset-0 w-full h-full object-contain z-30"
@@ -56,7 +57,7 @@ const Hero = () => {
         </div>
 
         {/* Center Circle in middle of the section - rotate animation */}
-        <div className="absolute z-40 left-0 bottom-[-40px] lg:translate-x-[-50%] lg:top-[95px] xl:top-[144px]">
+        <div className="absolute z-40 left-0 bottom-[-40px] lg:translate-x-[-50%] lg:top-[95px] xl:top-[144px]" data-aos="fade-down">
           <HeroArrowIcon />
         </div>
       </div>

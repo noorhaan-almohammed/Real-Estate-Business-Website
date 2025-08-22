@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import type { FeaturesType } from "../../types/Contact/ContactType";
 import SpinigCircleIcon from "../sharedComponents/SpinigCircleIcon";
 
-const FeaturesCard = ({ item }: { item: FeaturesType }) => {
+const FeaturesCard = ({ item ,...aos}: { item: FeaturesType }) => {
   return (
     <Link
+      {...aos}
       to={item.link}
       className="rotate-conic relative group flex items-center justify-center border border-Grey-15 rounded-[12px] bg-Grey-10 z-1 transition-all linear"
     >

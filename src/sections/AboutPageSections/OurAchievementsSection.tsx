@@ -23,6 +23,8 @@ const OurAchievementsSection = ({data}:{data:OurAchievementsSectionType}) => {
                 readMoreLink: "#",
                 btnText: ""
               }}
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
               withShadow={true}
               showButton={false}
             />

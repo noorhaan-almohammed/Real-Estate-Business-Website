@@ -12,9 +12,11 @@ const OurValuesCard = ({
   title,
   description,
   rightBorder = false,
+  ...aos
 }: OurValuesCardProps) => {
   return (
     <div
+      {...aos}
       className={`w-full flex flex-col gap-3 min-h-full mb-auto ${
         rightBorder ? "md:border-r md:border-Grey-15 md:pr-6 2xl:pr-7.5" : ""
       }`}

@@ -40,7 +40,7 @@ const renderButton = (btn: CTAButton) => (
   );
 
     return (
-        <div className="flex flex-col gap-y-5 lg:gap-y-0 ">
+        <div className="flex flex-col gap-y-5 lg:gap-y-0 " data-aos="zoom-in">
             <div className=" mx-auto w-full lg:max-w-[81.45363%] ">
                 <div className="relative w-full  h-[80px] xl:h-[103px]">
                     <input

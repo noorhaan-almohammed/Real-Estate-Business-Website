@@ -10,8 +10,8 @@ function OurOfficeFilters({data}:{data:ContactDiscoverLocationsFilterDataType}) 
             (item) => item.id.toLowerCase() === activeTab.toLowerCase()
             );
     return (
-        <div className="flex flex-col gap-7.5 md:gap-10 xl:gap-12.5">
-            <div className="tabs flex gap-2.5  bg-Grey-10 rounded-lg xl:rounded-xl p-2.5 w-fit ">
+        <div className="flex flex-col gap-7.5 md:gap-10 xl:gap-12.5" >
+            <div className="tabs flex gap-2.5  bg-Grey-10 rounded-lg xl:rounded-xl p-2.5 w-fit " data-aos="fade-right"> 
                 {data.FilterOptions.map((option) => (
                     <button
                         key={option}

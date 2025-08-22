@@ -32,13 +32,14 @@ const Header = ({
     >
       {/* stars icon*/}
       {withIcon && (
-        <div className="absolute top-[-20px] md:top-[-30px] left-[-8px] md:left-[-16px]">
+        <div className="absolute top-[-20px] md:top-[-30px] left-[-8px] md:left-[-16px]" data-aos="fade-down">
           <ThreeStars />
         </div>
       )}
 
       {/* title */}
       <h2
+        data-aos="fade-right"
         className={`${type == "footer" ? "text-white" : "text-White"}
          ${textVW ? "text-[28px] md:text-[38px] lg:text-[2.5vw]" : "text-[28px] md:text-[38px] xl:text-5xl" }
          font-semibold leading-[150%]`}
@@ -49,6 +50,7 @@ const Header = ({
       {/* description */}
       <div className="flex items-center justify-between gap-37.5 xl:gap-50">
         <p
+          data-aos="fade-left"
           className={`text-Grey-60 font-medium text-sm md:text-base xl:text-lg leading-[150%]`}
         >
           {description}

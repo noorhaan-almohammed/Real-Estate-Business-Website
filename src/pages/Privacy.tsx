@@ -42,22 +42,22 @@ const Privacy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-Grey-08 text-White mt-[68px] lg:mt-[77px] xl:mt-[99px]">
+    <div className="min-h-screen bg-Grey-08 text-White mt-[68px] lg:mt-[77px] xl:mt-[99px]" >
       {/* Enhanced Header with professional styling */}
       <div className="border-b border-Grey-15 relative overflow-hidden bg-gradient-to-b from-Grey-10 to-Grey-08">
         <div className="absolute inset-0 bg-gradient-to-r from-Purple-60/5 via-transparent to-Purple-60/5"></div>
         <Container className="py-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-Purple-60/10 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-Purple-60/10 rounded-full mb-6" data-aos="zoom-in">
               <svg className="w-8 h-8 text-Purple-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold font-urbanist mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold font-urbanist mb-6 leading-tight" data-aos="fade-right">
               Privacy Policy
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-Purple-60 to-Purple-75 mx-auto mb-6 rounded-full"></div>
-            <p className="text-Grey-60 text-lg font-medium">
+            <p className="text-Grey-60 text-lg font-medium"  data-aos="fade-left">
               Last updated: {new Date().toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -74,7 +74,9 @@ const Privacy = () => {
           <div className="bg-Grey-10 rounded-2xl p-8 md:p-12 shadow-2xl border border-Grey-15">
             <div className="space-y-12">
               {privacyData.map((section, index) => (
-                <section key={section.id} className="group">
+                <section key={section.id} className="group"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 20}>
                   <div className="flex items-start space-x-4 mb-6">
                     <div className="flex-shrink-0 w-8 h-8 bg-Purple-60/20 rounded-full flex items-center justify-center">
                       <span className="text-Purple-60 font-semibold text-sm">{index + 1}</span>
@@ -98,9 +100,8 @@ const Privacy = () => {
                   </div>
                 </section>
               ))}
-
               {/* Enhanced Contact Information */}
-              <section className="group">
+              <section className="group" data-aos="zoom-in">
                 <div className="bg-gradient-to-br from-Grey-15 to-Grey-10 rounded-xl p-8 border border-Grey-20 shadow-lg">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="w-10 h-10 bg-Purple-60/20 rounded-lg flex items-center justify-center">
@@ -149,8 +150,9 @@ const Privacy = () => {
               {/* Enhanced Back to Home button */}
               <div className="text-center pt-8 border-t border-Grey-15">
                 <Link 
+                  data-aos="zoom-in"
                   to="/" 
-                  className="inline-flex items-center text-white px-8 py-4 bg-gradient-to-r from-Purple-60 to-Purple-65 text-White rounded-xl hover:from-Purple-65 hover:to-Purple-70 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-flex items-center text-white px-8 py-4 bg-gradient-to-r from-Purple-60 to-Purple-65 rounded-xl hover:from-Purple-65 hover:to-Purple-70 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="white" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
