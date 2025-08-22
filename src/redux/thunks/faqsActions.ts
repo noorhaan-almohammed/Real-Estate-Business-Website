@@ -17,10 +17,13 @@ export const subscribeToFaqs = () => (dispatch: AppDispatch) => {
 
           return {
             id: doc.id,
-            ...data,
+            question: data.question || "",
+            answer: data.answer || "",
+            btnText: data.btnText || "Read More",
+            readMoreLink: data.readMoreLink || "#",
             createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toMillis() : data.createdAt,
             updatedAt: data.updatedAt instanceof Timestamp ? data.updatedAt.toMillis() : data.updatedAt,
-          } as unknown as FaqItem;
+          } as FaqItem;
         });
 
         dispatch(setFaqs(faqs));

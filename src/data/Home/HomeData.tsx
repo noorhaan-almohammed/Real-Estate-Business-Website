@@ -205,7 +205,7 @@ export const testimonialsSectionData: TestimonialsSectionType = {
     "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.",
   button: {
     text: "View All Testimonials",
-    link: "#",
+    link: "/testimonials",
   },
 };
 
@@ -217,7 +217,7 @@ export const faqSectionData: FaqSectionType = {
     "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
   button: {
     text: "View All FAQ's",
-    link: "#",
+    link: "/faq",
   },
   faqs: [
     {
@@ -255,7 +255,7 @@ export const ctaSectionData: CtaSectionType = {
     "Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice. Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.",
   button: {
     text: "Explore Properties",
-    link: "#",
+    link: "/properties",
   },
 };
 
@@ -317,7 +317,7 @@ export const endFooterData: EndFooterType = {
   copyright: "©2023 Estatein. All Rights Reserved.",
   termsAndConditionsLink: {
     text: "Terms & Conditions",
-    link: "#terms",
+    link: "/terms",
   },
   socialLinks: [
     { name: "Facebook", icon: <Facebook />, link: "#" },
