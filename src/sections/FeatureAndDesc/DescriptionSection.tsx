@@ -15,10 +15,10 @@ export default function DescriptionSection({
     <div className=" lg:w-[49.0601%] w-full h-fit rounded-xl border border-Grey-15 p-5 
       lg:p-10 xl:p-12.5 flex flex-col gap-5 md:gap-10 xl:gap-12.5 bg-Grey-08">
       <div>
-        <h2 className="text-White text-lg md:text-xl xl:text-2xl font-semibold mb-1.5 md:mb-2.5 xl:mb-3.5" data-aos="fade-left">
+        <h2 className="text-White text-lg md:text-xl xl:text-2xl font-semibold mb-1.5 md:mb-2.5 xl:mb-3.5" data-aos="fade-up">
           {title}
         </h2>
-        <p className="text-Grey-60 text-sm lg:text-base xl:text-lg leading-relaxed" data-aos="fade-right">
+        <p className="text-Grey-60 text-sm lg:text-base xl:text-lg leading-relaxed" data-aos="fade-up">
           {description}
         </p>
       </div>

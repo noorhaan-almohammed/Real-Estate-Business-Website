@@ -10,7 +10,7 @@ export default function FeaturesSection({ title, features }: FeaturesSectionProp
       <div className="flex flex-col gap-4.5 md:gap-5 xl:gap-7.5">
         {features.map((feature, index) => (
           <FeatureColumn key={index} icon={feature?.icon} label={feature?.label} 
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-delay={index * 50}
           />
         ))}

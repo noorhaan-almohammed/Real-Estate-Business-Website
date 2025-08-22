@@ -24,7 +24,7 @@ const ServiceSection = ({title, description, data , data1, investSection} : Prop
             ${investSection ? 'gap-2.5 h-fit p-2.5 rounded-xl bg-Grey-10 flex-1 my-auto' : 'gap-5 xl:gap-7.5 lg:grid-cols-3'}`}>
             {data.map((item: ServiceCard, index: number) => (
                 <ValuesCard key={index} withIcon iconURL={item.icon} title={item.title} description={item.description} 
-                data-aos="zoom-out"
+                data-aos="fade-up"
                 data-aos-delay={index * 100}
                 /> 
             ))}

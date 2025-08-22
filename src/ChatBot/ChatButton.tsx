@@ -8,7 +8,7 @@ const ChatButton: React.FC<ChatButtonProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-6 left-6 w-16 h-16 bg-[#703bf7] text-white rounded-full shadow-xl flex items-center justify-center hover:bg-[#8254f8] transition-all transform hover:scale-105 z-40 group"
+      className="fixed bottom-13 left-6 w-16 h-16 bg-[#703bf7] text-white rounded-full shadow-xl flex items-center justify-center hover:bg-[#8254f8] transition-all transform hover:scale-105 z-40 group"
       aria-label="Open Chat"
     >
       <div className="relative">
