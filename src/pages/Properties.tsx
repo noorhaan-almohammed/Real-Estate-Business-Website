@@ -12,10 +12,10 @@ const Properties = () => {
   const [selectValues, setSelectValues] = useState<Record<string, string>>({})
   const [hasSearched, setHasSearched] = useState<boolean>(false)
 
-  const handleSearchResults = (search: string, selects: Record<string, string>, searched: boolean) => {
+  const handleSearchResults = (search: string, selects: Record<string, string>) => {
     setSearchTerm(search)
     setSelectValues(selects)
-    setHasSearched(searched)
+    setHasSearched(true)
   }
 
   const handleClearFilters = () => {
