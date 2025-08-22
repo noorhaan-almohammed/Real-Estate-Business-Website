@@ -10,7 +10,7 @@ interface SearchAndFiltersSectionProps {
   onSearchResults: (
     searchTerm: string,
     selectValues: Record<string, string>,
-    // hasSearched: boolean
+    hasSearched: boolean
   ) => void;
 }
 
@@ -29,13 +29,13 @@ function SearchAndFiltersSection({ onSearchResults }: SearchAndFiltersSectionPro
   const handleSearch = (term: string, values: Record<string, string>) => {
     setSearchTerm(term);
     setSelectValues(values);
-    onSearchResults(term, values);
+    onSearchResults(term, values, true);
   };
 
   const handleSelectChange = (name: string, value: string) => {
     const updated = { ...selectValues, [name]: value };
     setSelectValues(updated);
-    onSearchResults(searchTerm, updated);
+    onSearchResults(searchTerm, updated, true);
   };
 
   return (
