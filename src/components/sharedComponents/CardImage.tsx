@@ -5,7 +5,6 @@ interface CardImageProps {
   alt: string;
   height?: string;
   className?: string;
-  className1?: boolean;
 }
 
 const CardImage: React.FC<CardImageProps> = ({
@@ -13,7 +12,6 @@ const CardImage: React.FC<CardImageProps> = ({
   alt,
   className,
   height,
-  className1,
   ...aos
 }) => {
   return (
@@ -24,7 +22,7 @@ const CardImage: React.FC<CardImageProps> = ({
       <img
         src={src}
         alt={alt}
-        className={`w-full h-full ${className1 ? "object-cover xl:object-contain" : "object-cover"} transition-transform duration-300 hover:scale-103 hover:brightness-103`}
+        className={`w-full h-full object-cover transition-transform duration-300 hover:scale-103 hover:brightness-103`}
       />
     </div>
   );
