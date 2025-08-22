@@ -88,8 +88,8 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
-  createdAt: Timestamp;
-  updateddAt: Timestamp;
+  createdAt?: Timestamp;
+  updateddAt?: Timestamp;
   btnText:string;
   readMoreLink: string;
 }

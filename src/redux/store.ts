@@ -3,13 +3,15 @@ import themeReducer from "./Slices/themeSlice";
 import propertiesReducer from "./Slices/propertiesSlice"
 import reviewsReducer from "./Slices/reviewsSlice"
 import faqsReducer from "./Slices/faqsSlice"
+import achievementsReducer from "./Slices/achievementsSlice"
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
     properties: propertiesReducer,
     reviews: reviewsReducer,
-    faqs: faqsReducer
+    faqs: faqsReducer,
+    achievements: achievementsReducer,
   },
 });
 
