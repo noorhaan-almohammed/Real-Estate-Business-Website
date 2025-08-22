@@ -11,7 +11,7 @@ interface BaseSelectField {
   options?: string[];
   icon?: ReactNode;
   onChange?: (name: string, value: string) => void;
-  value?: string; // القيمة الحالية للحقل
+  value?: string; 
 }
 
 const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
@@ -19,7 +19,6 @@ const SearchSelect: React.FC<{ field: BaseSelectField }> = ({ field }) => {
   const [showList, setShowList] = useState<boolean>(false);
   const selectRef = useRef<HTMLDivElement>(null);
 
-  // تزامن selected مع القيمة القادمة من props
   useEffect(() => {
     setSelected(field.value || "");
   }, [field.value]);

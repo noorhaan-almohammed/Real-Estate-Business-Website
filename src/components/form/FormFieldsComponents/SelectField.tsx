@@ -10,7 +10,7 @@ interface BaseSelectField {
   placeholder: string;
   required?: boolean;
   options?: string[];
-  icon:ReactNode;
+  icon?:ReactNode;
 }
 
 const SelectField: React.FC<{ field: BaseSelectField }> = ({ field }) => {
