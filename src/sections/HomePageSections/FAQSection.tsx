@@ -45,12 +45,14 @@ const FAQSection = ({ data }: { data: FaqSectionType }) => {
               <FAQCardSkeleton key={i} />
             )) :
             items.length > 0
-              ? items.map((faq) => (
+              ? items.map((faq,index) => (
                 <FAQCard
                   key={faq.id}
                   faq={faq}
                   showButton={true}
                   withShadow={false}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
                 />
               ))
               : Array.from({ length: 3 }).map((_, i) => (
