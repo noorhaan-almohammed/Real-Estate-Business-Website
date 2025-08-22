@@ -12,7 +12,6 @@ export interface HeroStat {
   label: string;
 }
 
-
 export interface FeatureItem {
   arrow: ReactNode;
   icon: ReactNode;
@@ -55,6 +54,7 @@ export interface FeaturedProperty {
   details: FeaturedPropertyDetail[];
   price: string;
   button: FeaturedPropertyButton;
+  position: [number, number];
 }
 
 export interface FeaturedPropertiesSectionType {
@@ -87,7 +87,7 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
-  btnText:string;
+  btnText: string;
   readMoreLink: string;
 }
 export interface FaqSectionType {
@@ -124,12 +124,12 @@ export interface EndFooterType {
     link: string;
   }[];
 }
-export interface FooterNavColumn  {
-    title: string;
-    links: {
-        name: string;
-        link: string;
-    }[];
+export interface FooterNavColumn {
+  title: string;
+  links: {
+    name: string;
+    link: string;
+  }[];
 }
 
 export interface SocialLink {

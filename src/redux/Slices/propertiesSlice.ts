@@ -31,6 +31,7 @@ export interface Property {
   imageUrls: string[];
   updatedAt?: any;
   createdAt: any;
+  position: [number, number];
 }
 
 interface PropertiesState {

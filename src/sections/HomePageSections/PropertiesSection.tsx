@@ -45,10 +45,10 @@ function PropertiesSection({ data }: { data: FeaturedPropertiesSectionType }) {
         cards={
           loading
             ? Array.from({ length: 3 }).map((_, i) => (
-              <PropertiesCardSkeleton key={i} />
-            ))
+                <PropertiesCardSkeleton key={i} />
+              ))
             : items.length > 0
-              ? items.map((property) => (
+            ? items.map((property) => (
                 <PropertiesCard
                   key={property.id}
                   image={property.imageUrls[0]}
@@ -69,9 +69,10 @@ function PropertiesSection({ data }: { data: FeaturedPropertiesSectionType }) {
                   showInfo={true}
                   btnLink={`/properties/${property.id}`}
                   btnText={`View Property Details`}
+                  position={property.position}
                 />
               ))
-              : Array.from({ length: 3 }).map((_, i) => (
+            : Array.from({ length: 3 }).map((_, i) => (
                 <PropertiesCardSkeleton key={i} />
               ))
         }

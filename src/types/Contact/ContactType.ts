@@ -1,4 +1,4 @@
-import type {  ReactNode } from "react";
+import type { ReactNode } from "react";
 
 // ContactHero Type
 
@@ -34,7 +34,6 @@ export interface ContactLetsConnectFormDataType {
   areaText: ConactFormType;
 }
 
-
 // office location section
 
 export interface ContactDetailesType {
@@ -47,6 +46,7 @@ export interface CategoriesCardType {
   title: string;
   address: string;
   description: string;
+  category: string;
   contactDetailes: ContactDetailesType[];
   button: {
     text: string;

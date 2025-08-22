@@ -152,6 +152,7 @@ export const propertiesData: PropertiesData = {
           link: "#",
           variant: "primary",
         },
+        position: [25.276987, 55.296249],
       },
       {
         id: 2,
@@ -166,6 +167,7 @@ export const propertiesData: PropertiesData = {
           link: "#",
           variant: "primary",
         },
+        position: [40.712776, -74.005974],
       },
       {
         id: 3,
@@ -180,6 +182,7 @@ export const propertiesData: PropertiesData = {
           link: "#",
           variant: "primary",
         },
+        position: [46.818188, 8.227512],
       },
     ],
   },
@@ -202,10 +205,10 @@ export const propertiesData: PropertiesData = {
     formFields: [
       {
         id: "location",
-        placeholder: "Location",
+        placeholder: " Location",
         type: "select",
         name: "location",
-        options: [ "Malibu, California","New York, USA","Paris, France","Cairo, Egypt"],
+        options: ["Villa", "Apartment", "Office", "Land"],
         icon: <Location />,
       },
       {
