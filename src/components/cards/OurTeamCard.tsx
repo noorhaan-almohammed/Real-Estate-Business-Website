@@ -1,8 +1,8 @@
 import { useState } from "react"
-import type { MeetEstateinTeamCard } from "../../types/About/AboutType"
 import CardImage from "../sharedComponents/CardImage"
+import type { TeamMember } from "../../types/About/AboutType"
 
-const OurTeamCard = ({item} : {item: MeetEstateinTeamCard}) => {
+const OurTeamCard = ({item} : {item: TeamMember}) => {
   const [float, setFloat] = useState (false)
   return (
     <div className="p-5 lg:p-6 xl:p-7.5 border border-Grey-15 rounded-xl flex flex-col gap-10 lg:gap-12.5">

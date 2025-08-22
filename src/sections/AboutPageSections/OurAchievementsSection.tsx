@@ -32,7 +32,8 @@ const OurAchievementsSection = ({ data }: { data: OurAchievementsSectionType }) 
       <div className="flex flex-col lg:flex-row gap-y-5 justify-between">
         {loading
           ? Array.from({ length: 3 }).map((_, i) => <FAQCardSkeleton key={i} />)
-          : items.map((item) => (
+          : items.length > 0
+            ? items.map((item) => (
               <FAQCard
                 key={item.id}
                 faq={{
@@ -45,7 +46,11 @@ const OurAchievementsSection = ({ data }: { data: OurAchievementsSectionType }) 
                 withShadow={true}
                 showButton={false}
               />
-            ))}
+            ))
+            : Array.from({ length: 3 }).map((_, i) => (
+              <FAQCardSkeleton key={i} />
+            ))
+        }
       </div>
     </Container>
   );
