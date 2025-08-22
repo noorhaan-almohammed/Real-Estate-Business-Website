@@ -69,13 +69,13 @@ const FAQ = () => {
         <Container>
           <div className="text-center relative z-10">
             {/* Main Title with Neon Glow */}
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-White mb-6 font-urbanist relative">
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-White mb-6 font-urbanist relative" data-aos="zoom-in">
               Frequently Asked Questions
               <div className="absolute inset-0 bg-gradient-to-r from-Purple-60 via-Purple-75 to-Purple-60 blur-2xl opacity-20 animate-pulse"></div>
             </h1>
 
             {/* Subtitle with Neon Accent */}
-            <p className="text-lg md:text-xl xl:text-2xl text-Grey-60 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl xl:text-2xl text-Grey-60 mb-8 max-w-3xl mx-auto leading-relaxed" data-aos="fade-right">
               Find answers to the most common questions about our real estate
               services.
               <span className="text-Purple-75 font-semibold animate-pulse">
@@ -86,7 +86,7 @@ const FAQ = () => {
 
             {/* Stats with Neon Borders */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 xl:gap-10 max-w-4xl mx-auto">
-              <div className="relative group">
+              <div className="relative group" data-aos="fade-up">
                 <div className="bg-Grey-10 border border-Purple-60/30 rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:border-Purple-60 group-hover:shadow-[0_0_20px_rgba(112,59,247,0.3)]">
                   <div className="text-3xl md:text-4xl xl:text-5xl font-bold text-Purple-75 mb-2 animate-pulse">
                     {loading ? "..." : `${items.length}+`}
@@ -97,7 +97,7 @@ const FAQ = () => {
                 </div>
               </div>
 
-              <div className="relative group">
+              <div className="relative group" data-aos="fade-down">
                 <div className="bg-Grey-10 border border-Purple-60/30 rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:border-Purple-60 group-hover:shadow-[0_0_20px_rgba(112,59,247,0.3)]">
                   <div
                     className="text-3xl md:text-4xl xl:text-5xl font-bold text-Purple-75 mb-2 animate-pulse"
@@ -111,7 +111,7 @@ const FAQ = () => {
                 </div>
               </div>
 
-              <div className="relative group">
+              <div className="relative group" data-aos="fade-up">
                 <div className="bg-Grey-10 border border-Purple-60/30 rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:border-Purple-60 group-hover:shadow-[0_0_20px_rgba(112,59,247,0.3)]">
                   <div
                     className="text-3xl md:text-4xl xl:text-5xl font-bold text-Purple-75 mb-2 animate-pulse"
@@ -139,11 +139,11 @@ const FAQ = () => {
 
         <Container>
           <div className="text-center mb-16 md:mb-20 xl:mb-25">
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-White mb-6 font-urbanist relative">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-White mb-6 font-urbanist relative" data-aos="zoom-in">
               Common Questions
               <div className="absolute inset-0 bg-gradient-to-r from-Purple-60 via-Purple-75 to-Purple-60 blur-xl opacity-10 animate-pulse"></div>
             </h2>
-            <p className="text-lg md:text-xl text-Grey-60 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-Grey-60 max-w-2xl mx-auto" data-aos="fade-right">
               Get instant answers to your questions about our real estate
               services and processes
             </p>
@@ -156,12 +156,14 @@ const FAQ = () => {
               : error
               ? <div className="col-span-full text-center text-Grey-60">Error loading FAQs: {error}</div>
               : items.length > 0
-              ? items.map((faq) => (
+              ? items.map((faq,index) => (
                 <FAQCard
                   key={faq.id}
                   faq={faq}
                   showButton={true}
                   withShadow={false}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 />
               ))
               : <div className="col-span-full text-center text-Grey-60">No FAQs available</div>
@@ -173,7 +175,7 @@ const FAQ = () => {
             <div className="relative inline-block group">
               <div className="absolute inset-0 bg-gradient-to-r from-Purple-60 to-Purple-75 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
               <Link to="/contact">
-                <button className="relative bg-gradient-to-r from-Purple-60 to-Purple-75 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-semibold text-lg md:text-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(112,59,247,0.4)]">
+                <button className="relative bg-gradient-to-r from-Purple-60 to-Purple-75 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-semibold text-lg md:text-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(112,59,247,0.4)]" data-aos="zoom-in">
                   Contact Support
                 </button>
               </Link>

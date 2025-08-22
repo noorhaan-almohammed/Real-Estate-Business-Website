@@ -17,6 +17,7 @@ const ContactExploreWorldContent = ({
       </div>
 
       <CardImage
+        data-aos="zoom-out"
         src={mainImage}
         alt="main-image"
       />

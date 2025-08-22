@@ -15,10 +15,10 @@ export default function DescriptionSection({
     <div className=" lg:w-[49.0601%] w-full h-fit rounded-xl border border-Grey-15 p-5 
       lg:p-10 xl:p-12.5 flex flex-col gap-5 md:gap-10 xl:gap-12.5 bg-Grey-08">
       <div>
-        <h2 className="text-White text-lg md:text-xl xl:text-2xl font-semibold mb-1.5 md:mb-2.5 xl:mb-3.5">
+        <h2 className="text-White text-lg md:text-xl xl:text-2xl font-semibold mb-1.5 md:mb-2.5 xl:mb-3.5" data-aos="fade-left">
           {title}
         </h2>
-        <p className="text-Grey-60 text-sm lg:text-base xl:text-lg leading-relaxed">
+        <p className="text-Grey-60 text-sm lg:text-base xl:text-lg leading-relaxed" data-aos="fade-right">
           {description}
         </p>
       </div>
@@ -28,6 +28,8 @@ export default function DescriptionSection({
           return (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
               className={`
                 w-1/2 lg:w-auto flex flex-col gap-1.5 md:gap-2 xl:gap-2.5 
                 ${index !== 0 && !isLast ? "border-l border-Grey-15 pl-4" : ""}

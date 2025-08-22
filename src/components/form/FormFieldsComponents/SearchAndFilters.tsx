@@ -63,16 +63,16 @@ const SearchAndFilters: React.FC<Props> = ({
     </button>
   );
 
-  return (
-    <div className="flex flex-col gap-y-5 lg:gap-y-0">
-      <div className="mx-auto w-full lg:max-w-[81.45363%]">
-        <div className="relative w-full h-[80px] xl:h-[103px]">
-          <input
-            type={searchField.type}
-            id={searchField.id}
-            placeholder={searchField.placeholder}
-            className="pl-3.5 md:pl-5 xl:pl-6 w-full h-full text-base md:text-xl rounded-xl lg:rounded-b-none border border-Grey-15 
-            shadow-[0px_0px_0px_4px_var(--color-Grey-10)] lg:shadow-[0px_0px_0px_10px_var(--color-Grey-10)] bg-Grey-08 placeholder:text-Grey-60 focus:outline-none"
+    return (
+        <div className="flex flex-col gap-y-5 lg:gap-y-0 " data-aos="zoom-in">
+            <div className=" mx-auto w-full lg:max-w-[81.45363%] ">
+                <div className="relative w-full  h-[80px] xl:h-[103px]">
+                    <input
+                    type={searchField.type}
+                    id={searchField.id}
+                    placeholder={searchField.placeholder}
+                    className="pl-3.5 md:pl-5 xl:pl-6 w-full h-full text-base md:text-xl rounded-xl  lg:rounded-b-none border border-Grey-15 
+                    shadow-[0px_0px_0px_4px_var(--color-Grey-10)] lg:shadow-[0px_0px_0px_10px_var(--color-Grey-10)] bg-Grey-08 placeholder:text-Grey-60 focus:outline-none "
           />
           <div className="absolute top-1/2 right-[20px] transform -translate-y-1/2 ">
             {renderButton(searchButton)}

@@ -13,6 +13,8 @@ const Statistics = () => {
     <div className="w-full flex flex-wrap justify-between gap-y-3">
       {Stats.map((stat, index) => (
         <StatsCard
+          data-aos="zoom-in"
+          data-aos-delay={index * 100}
           key={index}
           value={stat.value}
           label={stat.label}

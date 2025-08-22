@@ -23,9 +23,10 @@ const ValuesCard = ({
   smartSection,
   link,
   className,
+  ...aos
 }: ValuesCardProps) => {
   return (
-    <div id={title.replaceAll(" ", "_").replaceAll(",","").toLowerCase()}
+    <div id={title.replaceAll(" ", "_").replaceAll(",","").toLowerCase()} {...aos}
       className={`relative overflow-hidden z-20 rounded-[10px] xl:rounded-xl bg-Grey-08 border border-Grey-15 
     ${
       smartSection

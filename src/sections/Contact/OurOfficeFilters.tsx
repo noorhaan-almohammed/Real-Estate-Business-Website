@@ -28,13 +28,13 @@ function OurOfficeFilters({ data }: { data: ContactDiscoverLocationsFilterDataTy
 
     return (
         <div className="flex flex-col gap-7.5 md:gap-10 xl:gap-12.5">
-            <div className="tabs flex flex-wrap gap-2.5 bg-Grey-10 rounded-lg xl:rounded-xl p-2.5 w-full md:w-fit" data-aos="fade-right">
+            <div className="tabs flex flex-wrap gap-2.5 bg-Grey-10 rounded-lg xl:rounded-xl p-2.5  w-fit" data-aos="fade-right">
                 {data.FilterOptions.map((option) => (
                     <button
                         key={option}
                         onClick={() => setActiveTab(option)}
-                        className={`py-3 px-4 md:py-3.5 md:px-5 xl:py-4.5 xl:px-6 min-w-20 md:min-w-25 xl:min-w-31 rounded-lg xl:rounded-[10px] border border-Grey-15 
-                            transition-all duration-200 text-xs md:text-sm xl:text-lg font-medium whitespace-nowrap
+                        className={`py-3 px-4 md:py-3.5 md:px-5 xl:py-4.5 xl:px-6 w-fit xs:min-w-25 md:min-w-28 xl:min-w-31 rounded-lg xl:rounded-[10px] border border-Grey-15 
+                            transition-all duration-200 text-sm lg:text-lg font-medium whitespace-nowrap
                         ${activeTab === option
                                 ? "bg-Grey-08 text-Purple-70"
                                 : "bg-transparent hover:border-white text-White"

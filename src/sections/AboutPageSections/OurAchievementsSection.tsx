@@ -33,7 +33,7 @@ const OurAchievementsSection = ({ data }: { data: OurAchievementsSectionType }) 
         {loading
           ? Array.from({ length: 3 }).map((_, i) => <FAQCardSkeleton key={i} />)
           : items.length > 0
-            ? items.map((item) => (
+            ? items.map((item,index) => (
               <FAQCard
                 key={item.id}
                 faq={{
@@ -43,6 +43,8 @@ const OurAchievementsSection = ({ data }: { data: OurAchievementsSectionType }) 
                   readMoreLink: "#",
                   btnText: "",
                 }}
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
                 withShadow={true}
                 showButton={false}
               />

@@ -28,8 +28,9 @@ const OurTeam = ({ data }: { data: MeetEstateinTeamCardSectionType }) => {
         {loading
           ? Array.from({ length: 4 }).map((_, i) => <OurTeamCardSkeleton key={i} />)
           : items.length > 0
-            ? items.map((item) => (
-              <OurTeamCard key={item.id} item={item} />
+            ? items.map((item,index) => (
+              <OurTeamCard key={item.id} item={item} data-aos="fade-up"
+                data-aos-delay={index * 200}/>
             )): Array.from({ length: 3 }).map((_, i) => (
               <OurTeamCardSkeleton key={i} />
             ))

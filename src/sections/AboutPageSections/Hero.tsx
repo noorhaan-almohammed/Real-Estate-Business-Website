@@ -27,6 +27,7 @@ const Hero = () => {
 
         {/* Foreground Image */}
         <img
+          data-aos="fade-left"
           src={heroImage}
           alt="heroImageBuilding"
           className="absolute inset-0 w-full h-full object-contain object-bottom-right z-30"

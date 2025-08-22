@@ -2,10 +2,10 @@ import { useState } from "react"
 import CardImage from "../sharedComponents/CardImage"
 import type { TeamMember } from "../../types/About/AboutType"
 
-const OurTeamCard = ({item} : {item: TeamMember}) => {
+const OurTeamCard = ({item ,...aos} : {item: TeamMember}) => {
   const [float, setFloat] = useState (false)
   return (
-    <div className="p-5 lg:p-6 xl:p-7.5 border border-Grey-15 rounded-xl flex flex-col gap-10 lg:gap-12.5">
+    <div className="p-5 lg:p-6 xl:p-7.5 border border-Grey-15 rounded-xl flex flex-col gap-10 lg:gap-12.5" {...aos}>
      <div className="relative">
          <CardImage src={item.image} alt={item.id} height="h-[68.7179vw] md:h-[30vw] lg:h-[15.2778vw] xl:h-[13.1770834vw]" className1 />
          <button className="absolute -bottom-5 xl:-bottom-6.5 left-1/2 -translate-x-1/2 rounded-[43px] py-2.5 px-5 xl:py-3.5 xl:px-6.5 bg-Purple-60 cursor-pointer"><img src="/assets/icons/twitterIcon.svg" className="w-5 h-5 xl:w-6 xl:h-6" alt="social media icon" /></button>

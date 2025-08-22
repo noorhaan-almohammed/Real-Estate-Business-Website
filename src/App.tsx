@@ -18,8 +18,8 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import Loader from "./components/kit/Loader";
-// import BackToTop from "./components/kit/BackToTop";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/about", element: <About /> },
@@ -34,6 +34,9 @@ const routes = [
 ];
 
 function App() {
+  useEffect(() => {
+    AOS.init({duration :1000 ,easing:"ease"});
+  },[])
   return (
     <Router>
       <ScrollToTop />
@@ -45,7 +48,6 @@ function App() {
           </div>
         }
       >
-        {/* <BackToTop/> */}
         <Routes>
           {/* Main layout wrapper */}
           <Route element={<MainLayout />}>

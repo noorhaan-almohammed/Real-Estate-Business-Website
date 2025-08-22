@@ -14,9 +14,11 @@ const CardImage: React.FC<CardImageProps> = ({
   className,
   height,
   className1,
+  ...aos
 }) => {
   return (
     <div
+    {...aos}
       className={`w-full ${height} overflow-hidden rounded-[10px] xl:rounded-xl ${className}`}
     >
       <img
