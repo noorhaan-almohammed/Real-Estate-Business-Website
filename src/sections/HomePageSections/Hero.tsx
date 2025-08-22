@@ -15,10 +15,10 @@ const Hero = () => {
       {/* Left Content */}
       <div className="h-full w-full max-lg:mb-10 lg:w-[43.1171%] flex flex-col gap-10 lg:gap-12.5 xl:gap-15">
         <div className="flex flex-col gap-4 lg:gap-6">
-          <h2 className="text-2xl lg:text-[46px] xl:text-[60px] text-White font-semibold leading-[120%] tracking-[0]" data-aos="fade-right">
+          <h2 className="text-2xl lg:text-[46px] xl:text-[60px] text-White font-semibold leading-[120%] tracking-[0]" data-aos="fade-up">
             {headline}
           </h2>
-          <p className="font-medium text-[18px] text-Grey-60 leading-[150%] tracking-[0] lg:text-lg" data-aos="fade-left">
+          <p className="font-medium text-[18px] text-Grey-60 leading-[150%] tracking-[0] lg:text-lg" data-aos="fade-up">
             {description}
           </p>
         </div>
