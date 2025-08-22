@@ -32,7 +32,6 @@ const PropertyDetails = () => {
   if (loading || !property) {
     return <Loader/>;
   }
-  console.log(property)
 
   const propertyDetailsData: PropertyDetailsType = {
     title: property.name,

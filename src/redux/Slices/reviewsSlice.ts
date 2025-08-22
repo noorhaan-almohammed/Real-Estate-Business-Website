@@ -9,8 +9,8 @@ export interface Review {
   profileimage: string;
   city: string;
   country: string;
-  createdAt: any;
-  updatedAt?: any;
+  createdAt: number;
+  updatedAt?: number;
 }
 
 interface ReviewsState {

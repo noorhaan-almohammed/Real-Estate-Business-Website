@@ -1,4 +1,3 @@
-// src/redux/Thunks/reviewsThunks.ts
 import { collection, onSnapshot, orderBy, query, Timestamp } from "firebase/firestore";
 import { setReviews, setLoading, setError, type Review } from "../Slices/reviewsSlice";
 import { db } from "../../firebaseConfig";

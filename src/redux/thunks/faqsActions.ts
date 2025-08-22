@@ -1,4 +1,4 @@
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy, Timestamp } from "firebase/firestore";
 import type { FaqItem } from "../../types/Home/HomeTypes";
 import type { AppDispatch } from "../store";
 import { setFaqs, setFaqsError, setFaqsLoading } from "../Slices/faqsSlice";
@@ -12,10 +12,17 @@ export const subscribeToFaqs = () => (dispatch: AppDispatch) => {
     const unsubscribe = onSnapshot(
       q,
       (snapshot) => {
-        const faqs: FaqItem[] = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...(doc.data() as Omit<FaqItem, "id">),
-        }));
+        const faqs: FaqItem[] = snapshot.docs.map((doc) => {
+          const data = doc.data();
+
+          return {
+            id: doc.id,
+            ...data,
+            createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toMillis() : data.createdAt,
+            updatedAt: data.updatedAt instanceof Timestamp ? data.updatedAt.toMillis() : data.updatedAt,
+          } as unknown as FaqItem;
+        });
+
         dispatch(setFaqs(faqs));
       },
       (error) => {

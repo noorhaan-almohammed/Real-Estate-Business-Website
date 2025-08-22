@@ -1,6 +1,6 @@
-
 // our value card type
 
+import type { Timestamp } from "firebase/firestore";
 import type { ReactNode } from "react";
 
 export interface valueCard {
@@ -21,6 +21,8 @@ export interface OurAchievementsCard {
   id: string;
   title: string;
   description: string;
+  createdAt?: Timestamp;
+  updateddAt?: Timestamp;
 }
 
 export interface OurAchievementsSectionType {
