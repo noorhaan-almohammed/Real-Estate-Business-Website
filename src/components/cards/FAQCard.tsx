@@ -33,7 +33,7 @@ function FAQCard({ faq, showButton = true, withShadow = false }: Props) {
         <p className="text-Grey-60 text-sm md:text-base xl:text-lg font-medium">{faq?.answer}</p>
         {showButton && (
           <div onClick={handleReadMore}>
-            <Button link="#" content={faq.btnText} className=" md:w-fit bg-Grey-10" withBorder/>
+            <Button link="#" content={"Read More"} className=" md:w-fit bg-Grey-10" withBorder/>
           </div>
         )}
       </div>
