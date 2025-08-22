@@ -23,127 +23,90 @@ const LightDarkBtn: React.FC = () => {
     dispatch(toggleTheme());
   };
 
-  const particles = [
-    { top: "70%", left: "30%", delay: "0.2s" },
-    { top: "60%", left: "60%", delay: "0.6s" },
-    { top: "50%", left: "40%", delay: "1s" },
-    { top: "40%", left: "70%", delay: "1.4s" },
-    { top: "80%", left: "50%", delay: "1.8s" },
-  ];
-  const rings = [
-    {
-      size: "30px",
-      borderTop: "rgba(0,150,255,0.5)",
-      borderRight: "rgba(0,150,255,0.3)",
-      duration: "3s",
-      reverse: false,
-    },
-    {
-      size: "20px",
-      borderBottom: "rgba(0,150,255,0.5)",
-      borderLeft: "rgba(0,150,255,0.3)",
-      duration: "2s",
-      reverse: true,
-    },
-    {
-      size: "10px",
-      borderLeft: "rgba(0,150,255,0.5)",
-      borderTop: "rgba(0,150,255,0.3)",
-      duration: "1.5s",
-      reverse: false,
-    },
-  ];
-  const lines = [
-    { w: "15px", h: "1px", bottom: "2px", left: "20px" },
-    { w: "1px", h: "8px", bottom: "5px", left: "35px" },
-    { w: "25px", h: "1px", bottom: "8px", left: "15px" },
-    { w: "15px", h: "1px", bottom: "4px", right: "2px" },
-    { w: "1px", h: "8px", bottom: "2px", right: "3.5px" },
-    { w: "25px", h: "1px", bottom: "7px", right: "1px" },
-  ];
-
   return (
-    <div className="switch-wrapper relative">
-      <div className="toggle-container relative w-15 md:w-20 flex flex-col items-center perspective-[800px] z-10">
-        <div className="toggle-wrap relative w-full h-7.5 md:h-10 transform-3d">
-          <input
-            className="toggle-input absolute opacity-0 w-0 h-0"
-            id="holo-toggle"
-            type="checkbox"
-            checked={darkMode}
-            onChange={handleToggle}
-          />
-          <label
-            className="toggle-track absolute w-full h-full bg-[#a685fa80] rounded-4xl overflow-hidden backdrop-blur-[5px] border border-[#a685fa]
-          before:content-none before:absolute before:top-0 before:left-0 before:w-full before:h-full before:opacity-[6%]
-          after:content-none after:absolute after:top-[2px] after:left-[2px] after:right-[2px] after:h-1 after:opacity-[7%] after:rounded-t-4xl after:rounded-l-4xl 
-          "
-            htmlFor="holo-toggle"
-          >
-            <div className="track-lines absolute top-1/2 left-0 w-full h-0.5 -translate-y-1/2 overflow-hidden">
-              <div className="track-line absolute top-0 left-0 w-full h-full" />
-            </div>
-            <div className="toggle-thumb absolute w-6 md:w-8.5 h-6 md:h-8.5 left-[2.5px] top-[2.5px] rounded-full z-20 border border-[#a685fa] overflow-hidden transform-3d">
-              <div className="thumb-core absolute w-5 h-5 top-1/2 left-1/2 translate-[-50%,-50%] rounded-full opacity-90" />
-              <div className="thumb-inner absolute w-3 h-3 top-1/2 left-1/2 rounded-full opacity-70 translate-[-50%,-50%]" />
-              <div className="thumb-scan absolute w-full h-1 top-0 left-0 blur-[1px] opacity-70" />
-              <div className="thumb-particles absolute inset-0 overflow-hidden">
-                {particles.map((p, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-[3px] h-[3px] rounded-full bg-[#f2effc80] shadow-[0_0_5px_(#a685fa80)] thumb-particle opacity-0"
-                    style={{
-                      top: p.top,
-                      left: p.left,
-                      animationDelay: p.delay,
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className="toggle-data absolute w-full h-full z-10">
-              <div className="status-indicator off absolute w-2.5 h-2.5 rounded-full translate-y-[-50%] top-1/2 right-2" />
-              <div className="status-indicator on absolute w-2.5 h-2.5 rounded-full translate-y-[-50%] top-1/2 left-2" />
-            </div>
-            <div className="energy-rings absolute w-3 h-3 left-0.5 top-0.5 pointer-events-none z-10 transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)]">
-              {rings.map((r, i) => (
-                <div
-                  key={i}
-                  className={`absolute top-1/2 left-1/2 rounded-full border-2 border-transparent opacity-0 energy-ring`}
-                  style={{
-                    width: r.size,
-                    height: r.size,
-                    borderTopColor: r.borderTop,
-                    borderRightColor: r.borderRight,
-                    borderBottomColor: r.borderBottom,
-                    borderLeftColor: r.borderLeft,
-                    animationDuration: r.duration,
-                    animationDirection: r.reverse ? "reverse" : "normal",
-                  }}
-                />
-              ))}
-            </div>
-            <div className="interface-lines absolute inset-0 pointer-events-none">
-              {lines.map((l, i) => (
-                <div
-                  key={i}
-                  className="absolute bg-[#625f6b4d] transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)]"
-                  style={{
-                    width: l.w,
-                    height: l.h,
-                    bottom: l.bottom,
-                    left: l.left,
-                    right: l.right,
-                  }}
-                />
-              ))}
-            </div>
-            <div className="toggle-reflection absolute inset-0 rounded-4xl pointer-events-none bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_40%)]" />
-            <div className="holo-glow absolute inset-0 rounded-4xl blur-[10px] opacity-50 z-0 transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] bg-[radial-gradient(ellipse_at_center,rgba(0,150,255,0.2)_0%,rgba(0,0,0,0)_70%)]" />
-          </label>
-        </div>
+    <button
+      onClick={handleToggle}
+      className="relative w-9 h-9 rounded-full bg-Grey-10/90 border border-Grey-30 hover:border-Grey-40 transition-all duration-500 ease-out group cursor-pointer overflow-hidden shadow-[0_0_15px_rgba(112,59,247,0.2)] hover:shadow-[0_0_25px_rgba(112,59,247,0.4)] backdrop-blur-sm"
+      aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+    >
+      {/* Neon Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-Purple-60/5 via-transparent to-Purple-75/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+      {/* Animated Border Glow */}
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-Purple-60/40 via-Purple-75/20 to-Purple-60/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+
+      {/* Floating Neon Orbs */}
+      <div
+        className="absolute top-1 left-1/4 w-1 h-1 bg-Purple-60 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-bounce transition-all duration-500"
+        style={{ animationDelay: "0.1s" }}
+      ></div>
+      <div
+        className="absolute bottom-1 right-1/4 w-1.5 h-1.5 bg-Purple-75 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-bounce transition-all duration-500"
+        style={{ animationDelay: "0.3s" }}
+      ></div>
+
+      {/* Icon Container */}
+      <div className="relative z-10 w-full h-full flex items-center justify-center">
+        {darkMode ? (
+          // Moon Icon (for dark mode)
+          <div className="p-1 rounded-full transition-all duration-300 group-active:scale-110 group-active:-rotate-12">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-Purple-75 drop-shadow-[0_0_16px_rgba(112,59,247,0.8)] transition-all duration-300 ease-out group-active:drop-shadow-[0_0_25px_rgba(112,59,247,1)] group-active:text-Purple-60"
+            >
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-active:animate-pulse"
+              />
+            </svg>
+          </div>
+        ) : (
+          // Sun Icon (for light mode)
+          <div className="p-1 rounded-full transition-all duration-300 group-active:scale-110 group-active:rotate-12">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-Purple-75 drop-shadow-[0_0_16px_rgba(112,59,247,0.8)] transition-all duration-300 ease-out group-active:drop-shadow-[0_0_25px_rgba(112,59,247,1)] group-active:text-Purple-60"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="5"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="group-active:animate-pulse"
+              />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-active:animate-pulse"
+                style={{ animationDelay: '0.1s' }}
+              />
+            </svg>
+          </div>
+        )}
       </div>
-    </div>
+
+      {/* Active State Glow Effect */}
+      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-Purple-60/10 via-transparent to-transparent animate-pulse"></div>
+
+      {/* Click effect with ripple */}
+      <div className="absolute inset-0 rounded-full bg-Purple-75/30 scale-0 group-active:scale-100 transition-transform duration-150" />
+    </button>
   );
 };
 
