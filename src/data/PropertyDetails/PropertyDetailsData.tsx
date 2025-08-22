@@ -20,7 +20,6 @@ export const PropertyDetailsData : PropertyDetailsType={
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla7.webp",},
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla8.webp",},
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla9.webp",},
-        // 
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla1.webp",},
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla2.webp",},
         {image: "/assets/images/PropertyDetails/SeasideSerenityVilla3.webp",},
