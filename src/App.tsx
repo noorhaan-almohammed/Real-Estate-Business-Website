@@ -12,6 +12,8 @@ const Properties = lazy(() => import("./pages/Properties"));
 const PropertyDetails = lazy(() => import("./pages/PropertyDetails"));
 const Services = lazy(() => import("./pages/Services"));
 const Contact = lazy(() => import("./pages/Contact"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -25,6 +27,8 @@ const routes = [
   { path: "/properties/:id", element: <PropertyDetails /> },
   { path: "/services", element: <Services /> },
   { path: "/contact", element: <Contact /> },
+  { path: "/faq", element: <FAQ /> },
+  { path: "/testimonials", element: <Testimonials /> },
   { path: "/terms", element: <Terms /> },
   { path: "/privacy", element: <Privacy /> },
 ];
@@ -35,6 +39,7 @@ function App() {
   },[])
   return (
     <Router>
+      <ScrollToTop />
       <ScrollToHash /> 
       <Suspense
         fallback={
@@ -72,6 +77,18 @@ const ScrollToHash = () => {
       }
     }
   }, [hash]);
+
+  return null;
+};
+
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [pathname, hash]);
 
   return null;
 };

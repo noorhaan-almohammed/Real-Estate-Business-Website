@@ -16,7 +16,7 @@ export interface Property {
   tag_description: string;
   down_payment: number;
   mortgage_amount: number;
-  mortgage_fees: number;
+  mortgage_fees: string;
   monthly_taxes: number;
   expense_taxes: number;
   expense_mortgage: string;

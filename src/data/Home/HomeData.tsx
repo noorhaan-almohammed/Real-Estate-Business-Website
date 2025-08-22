@@ -205,46 +205,8 @@ export const testimonialsSectionData: TestimonialsSectionType = {
     "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.",
   button: {
     text: "View All Testimonials",
-    link: "#",
+    link: "/testimonials",
   },
-  testimonials: [
-    {
-      id: "testimonial-1",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Exceptional Service!",
-      text: "Our experience with Estatein was outstanding. Their teams dedication and professionalism made finding our dream home a breeze. Highly recommended!",
-      author: {
-        name: "Wade Warren",
-        location: "USA, California",
-        avatar: "/assets/images/Home/person1.webp",
-      },
-    },
-    {
-      id: "testimonial-2",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Efficient and Reliable",
-      text: "Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price. We couldn't be happier with the results.",
-      author: {
-        name: "Emelie Thomson",
-        location: "USA, Florida",
-        avatar: "/assets/images/Home/person2.webp",
-      },
-    },
-    {
-      id: "testimonial-3",
-      rating: 5,
-      icon: "/assets/icons/star.svg",
-      title: "Trusted Advisors",
-      text: "The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!",
-      author: {
-        name: "John Mans",
-        location: "USA, Nevada",
-        avatar: "/assets/images/Home/person3.webp",
-      },
-    },
-  ],
 };
 
 // Frequently Asked Questions Data
@@ -255,7 +217,7 @@ export const faqSectionData: FaqSectionType = {
     "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
   button: {
     text: "View All FAQ's",
-    link: "#",
+    link: "/faq",
   },
   faqs: [
     {
@@ -293,7 +255,7 @@ export const ctaSectionData: CtaSectionType = {
     "Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice. Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.",
   button: {
     text: "Explore Properties",
-    link: "#",
+    link: "/properties",
   },
 };
 
@@ -355,7 +317,7 @@ export const endFooterData: EndFooterType = {
   copyright: "©2023 Estatein. All Rights Reserved.",
   termsAndConditionsLink: {
     text: "Terms & Conditions",
-    link: "#terms",
+    link: "/terms",
   },
   socialLinks: [
     { name: "Facebook", icon: <Facebook />, link: "#" },

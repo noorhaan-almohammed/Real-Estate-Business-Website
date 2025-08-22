@@ -1,8 +1,9 @@
 import type { FeaturesType } from "../../types/PropertyDetails/PropertyDetailsTypes";
 
-export default function FeatureColumn({ icon, label }: FeaturesType) {
+export default function FeatureColumn({ icon, label ,...aos}: FeaturesType) {
   return (
     <div
+      {...aos}
       className="
         group
         flex items-center gap-2.5 py-2.5 px-3 md:py-3.5 md:px-4 xl:py-4.5 xl:px-6 border-l border-Purple-60 

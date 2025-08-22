@@ -9,24 +9,48 @@ import SearchSelect from "./SearchSelect";
 interface Props {
   searchData: SearchSection;
   filterData: SearchFilterSection;
+  onSearch?: (searchTerm: string, selectValues: Record<string, string>) => void;
+  onSelectChange?: (name: string, value: string) => void;
 }
 
-const SearchAndFilters: React.FC<Props> = ({ searchData, filterData }) => {
+const SearchAndFilters: React.FC<Props> = ({
+  searchData,
+  filterData,
+  onSearch,
+  onSelectChange,
+}) => {
+  if (!searchData || !filterData) return null;
+
   const { searchField, searchButton } = searchData;
   const { formFields } = filterData;
 
-const renderButton = (btn: CTAButton) => (
-
-        <button
-        className="flex items-center text-sm lg:text-lg font-medium justify-center gap-2 w-fit lg:w-46 h-[63px] px-5 py-3.5 xl:px-6 xl:py-4.5 rounded-[10px] bg-Purple-60 text-white hover:bg-gradient-to-br 
-        hover:from-40% hover:from-Purple-65/65
-        hover:via-50% hover:via-Purple-75 
-        hover:to-70% hover:to-Purple-65/65
-        bg-[length:200%_200%] bg-[position:0%_0%]
-        transition-[background-position] duration-500 ease-in-out
-        hover:bg-[position:100%_100%]"
-    >    {btn.icon && (
-
+  const renderButton = (btn: CTAButton) => (
+    <button
+      className="flex items-center text-sm lg:text-lg font-medium justify-center gap-2 w-fit lg:w-46 h-[63px] px-5 py-3.5 xl:px-6 xl:py-4.5 rounded-[10px] bg-Purple-60 text-white hover:bg-gradient-to-br 
+      hover:from-40% hover:from-Purple-65/65
+      hover:via-50% hover:via-Purple-75 
+      hover:to-70% hover:to-Purple-65/65
+      bg-[length:200%_200%] bg-[position:0%_0%]
+      transition-[background-position] duration-500 ease-in-out
+      hover:bg-[position:100%_100%]"
+      onClick={() => {
+        const searchInput = document.getElementById(
+          searchField.id
+        ) as HTMLInputElement | null;
+        const searchTerm = searchInput?.value.trim() || "";
+        const selectValues = formFields.reduce((acc, field) => {
+          if (field.type === "select") {
+            const el = document.querySelector(
+              `select[name="${field.id}"]`
+            ) as HTMLSelectElement | null;
+            acc[field.id] = el?.value || "";
+          }
+          return acc;
+        }, {} as Record<string, string>);
+        onSearch?.(searchTerm, selectValues);
+      }}
+    >
+      {btn.icon && (
         <img
           src={btn.icon.toString()}
           alt="search icon"
@@ -59,7 +83,13 @@ const renderButton = (btn: CTAButton) => (
         {formFields.map(
           (field) =>
             field.type === "select" && (
-              <SearchSelect key={field.id} field={field} />
+              <SearchSelect
+                key={field.id}
+                field={{
+                  ...field,
+                  onChange: onSelectChange,
+                }}
+              />
             )
         )}
       </div>

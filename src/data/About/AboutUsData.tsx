@@ -54,19 +54,19 @@ export const OurAchievementsSectionData: OurAchievementsSectionType = {
     "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.",
   properties: [
     {
-      id: "property-1",
+      id: "1",
       title: "3+ Years of Excellence",
       description:
         "With over 3 years in the industry, we've amassed a wealth of knowledge and experience, becoming a go-to resource for all things real estate.",
     },
     {
-      id: "property-2",
+      id: "2",
       title: "Happy Clients",
       description:
         "Our greatest achievement is the satisfaction of our clients. Their success stories fuel our passion for what we do.",
     },
     {
-      id: "property-3",
+      id: "3",
       title: "Industry Recognition",
       description:
         "We've earned the respect of our peers and industry leaders, with accolades and awards that reflect our commitment to excellence.",
@@ -130,25 +130,25 @@ export const MeetEstateinTeamCardSectionData: MeetEstateinTeamCardSectionType =
       "At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.",
     properties: [
       {
-        id: "property-1",
+        id: "1",
         image: "/assets/images/About/Image(1).webp",
         name: "Max Mitchell",
         job: "Founder",
       },
       {
-        id: "property-2",
+        id: "2",
         image: "/assets/images/About/Image(4).webp",
         name: "Sarah Johnson",
         job: "Chief Real Estate Officer",
       },
       {
-        id: "property-3",
+        id: "3",
         image: "/assets/images/About/Image(2).webp",
         name: "David Brown",
         job: "Head of Property Management",
       },
       {
-        id: "property-4",
+        id: "4",
         image: "/assets/images/About/Image(3).webp",
         name: "Michael Turner",
         job: "Legal Counsel",
@@ -163,7 +163,7 @@ export const OurValuedClientsSectionData: OurValuedClientsSectionType = {
     "At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we've had the pleasure of serving",
   properties: [
     {
-      id: "property-1",
+      id: "1",
       date: "Since 2019",
       button: {
         text: "Visit Website",
@@ -186,7 +186,7 @@ export const OurValuedClientsSectionData: OurValuedClientsSectionType = {
       say: "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
     },
     {
-      id: "property-2",
+      id: "2",
       date: "Since 2018",
       button: {
         text: "Visit Website",

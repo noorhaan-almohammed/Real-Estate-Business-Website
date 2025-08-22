@@ -36,6 +36,8 @@ function PricingDetailsCard({PricingItem,title}:PricingDetailsCardPopps) {
                         `}
                     >
                         <Additional title={data.label} price={data.value} desc={data.description} className={`${PricingItem.length > 2 && index % 2 === 1 ? "lg:border-l border-Grey-15 lg:pl-5 " : ""}`}
+                        data-aos="fade-right"
+                        data-aos-delay={index * 50}
                         />
                     </div>
                 );

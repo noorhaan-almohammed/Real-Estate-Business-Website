@@ -1,5 +1,5 @@
 import { useEffect, useState, type JSX, type MouseEvent } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Logo from "../../components/sharedComponents/Logo";
 import X from "../../svg/X";
 import WavyBackdrop from "../../svg/WavyBackdrop";
@@ -74,7 +74,12 @@ const Navbar = (): JSX.Element => {
               <span className=" text-White xl:pr-2.5 pr-1.5">
                 ✨Discover Your Dream Property with Estatein
               </span>
-              <span className="underline">Learn More</span>
+              <Link
+                to="/properties"
+                className="underline text-White hover:text-Purple-75 transition-colors duration-200 cursor-pointer"
+              >
+                Learn More
+              </Link>
             </div>
             <button
               aria-label="Close banner"
@@ -118,7 +123,7 @@ const Navbar = (): JSX.Element => {
         </div>
 
         {/* Contact Link (Desktop) */}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-4 w-max">
           {!isMenuOpen && <LightDarkBtn />}
           <NavLink
             to="/contact"
@@ -136,29 +141,34 @@ const Navbar = (): JSX.Element => {
           </NavLink>
         </div>
 
-        {/* Hamburger Icon (Mobile) */}
-        <div
-          className="md:hidden flex justify-center items-center w-7 rounded-full cursor-pointer transition-all duration-300"
-          onClick={toggleMenu}
-        >
-          <div className="w-[21px] h-[14px] flex flex-col justify-between items-center">
-            <span
-              className={`block w-full h-[2px] rounded-full transition-all duration-300 ${
-                isMenuOpen ? "rotate-45 translate-y-[6px] bg-White" : "bg-White"
-              }`}
-            />
-            <span
-              className={`block w-full h-[2px] rounded-full transition-all duration-300 ${
-                isMenuOpen ? "opacity-0" : "bg-White"
-              }`}
-            />
-            <span
-              className={`block h-[2px] rounded-full transition-all duration-300 ${
-                isMenuOpen
-                  ? "rotate-[-45deg] -translate-y-[6px] w-full bg-White"
-                  : "w-[54%] self-end bg-White"
-              }`}
-            />
+        <div className="flex items-center gap-4 justify-end w-max md:hidden">
+          <LightDarkBtn />
+          {/* Hamburger Icon (Mobile) */}
+          <div
+            className="flex justify-center items-center w-7 rounded-full cursor-pointer transition-all duration-300"
+            onClick={toggleMenu}
+          >
+            <div className="w-[21px] h-[14px] flex flex-col justify-between items-center">
+              <span
+                className={`block w-full h-[2px] rounded-full transition-all duration-300 ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-[6px] bg-White"
+                    : "bg-White"
+                }`}
+              />
+              <span
+                className={`block w-full h-[2px] rounded-full transition-all duration-300 ${
+                  isMenuOpen ? "opacity-0" : "bg-White"
+                }`}
+              />
+              <span
+                className={`block h-[2px] rounded-full transition-all duration-300 ${
+                  isMenuOpen
+                    ? "rotate-[-45deg] -translate-y-[6px] w-full bg-White"
+                    : "w-[54%] self-end bg-White"
+                }`}
+              />
+            </div>
           </div>
         </div>
       </nav>
@@ -166,10 +176,10 @@ const Navbar = (): JSX.Element => {
       {/* Mobile Slide-in Menu */}
       <div
         className={`fixed right-0 w-1/2 bg-Grey-10 z-50 transform transition-all duration-700 ease-[cubic-bezier(0.25, 0.46, 0.45, 0.94)] md:hidden ${
-          showBanner ? "top-[49px] xl:top-[63px] h-[calc(100%-49px)] xl:h-[calc(100%-63px)]" : "top-0 h-screen"
-        } ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+          showBanner
+            ? "top-[49px] xl:top-[63px] h-[calc(100%-49px)] xl:h-[calc(100%-63px)]"
+            : "top-0 h-screen"
+        } ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="mt-[68.58px] flex flex-col items-start">
           {navLinks.map(({ name, path }) => (
@@ -187,7 +197,6 @@ const Navbar = (): JSX.Element => {
             </NavLink>
           ))}
         </div>
-        {isMenuOpen && <LightDarkBtn />}
       </div>
     </>
   );

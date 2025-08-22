@@ -144,7 +144,8 @@ export const propertiesData: PropertiesData = {
         image: "/assets/images/Properties/imageSlideCard1.webp",
         smallTitle: "Coastal Escapes - Where Waves Beckon",
         mainTitle: "Seaside Serenity Villa",
-        description:"Wake up to the soothing melody of waves. This beachfront villa offers spacious, sunlit rooms with panoramic ocean views, a private terrace for morning coffee, and direct access to pristine sandy beaches. Enjoy the gentle sea breeze, relax by the infinity pool, or take evening strolls along the shore, all while indulging in the ultimate blend of luxury, comfort, and tranquility",
+        description:
+          "Wake up to the soothing melody of waves. This beachfront villa offers spacious, sunlit rooms with panoramic ocean views, a private terrace for morning coffee, and direct access to pristine sandy beaches. Enjoy the gentle sea breeze, relax by the infinity pool, or take evening strolls along the shore, all while indulging in the ultimate blend of luxury, comfort, and tranquility",
         price: "$1,250,000",
         button: {
           text: "View Property Details",
@@ -171,7 +172,8 @@ export const propertiesData: PropertiesData = {
         image: "/assets/images/Properties/imageSlideCard3.webp",
         smallTitle: "Countryside Charm - Escape to Nature's Embrace",
         mainTitle: "Rustic Retreat Cottage",
-        description:"Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills and surrounded by lush greenery, with fragrant gardens and a gentle stream nearby. The peaceful setting offers the perfect escape from the hustle and bustle of city life, where you can unwind on the porch, listen to the birds singing, and enjoy the fresh, crisp air every morning.",
+        description:
+          "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills and surrounded by lush greenery, with fragrant gardens and a gentle stream nearby. The peaceful setting offers the perfect escape from the hustle and bustle of city life, where you can unwind on the porch, listen to the birds singing, and enjoy the fresh, crisp air every morning.",
         price: "$350,000",
         button: {
           text: "View Property Details",
@@ -200,11 +202,11 @@ export const propertiesData: PropertiesData = {
     formFields: [
       {
         id: "location",
-        placeholder: " Location",
+        placeholder: "Location",
         type: "select",
         name: "location",
-        options: ["Villa", "Apartment", "Office", "Land"],
-        icon: <Location/>,
+        options: [ "Malibu, California","New York, USA","Paris, France","Cairo, Egypt"],
+        icon: <Location />,
       },
       {
         id: "property-type",
@@ -212,7 +214,7 @@ export const propertiesData: PropertiesData = {
         type: "select",
         name: "propertyType",
         options: ["Villa", "Apartment", "Office", "Land"],
-        icon: <AirplaneIcon/>,
+        icon: <AirplaneIcon />,
       },
       {
         id: "price-range",
@@ -220,7 +222,7 @@ export const propertiesData: PropertiesData = {
         type: "select",
         name: "priceRange",
         options: ["$100K - $300K", "$300K - $500K", "$500K - $1M", "$1M+"],
-        icon: <Camera/>,
+        icon: <Camera />,
       },
       {
         id: "property-size",
@@ -233,7 +235,7 @@ export const propertiesData: PropertiesData = {
           "2000 - 3000 sqft",
           "3000+ sqft",
         ],
-        icon: <Cube/>,
+        icon: <Cube />,
       },
       {
         id: "build-year",
@@ -246,7 +248,7 @@ export const propertiesData: PropertiesData = {
           "2000 - 2010",
           "1990 - 2000",
         ],
-        icon: <Calendar/>,
+        icon: <Calendar />,
       },
     ],
     submitButton: {

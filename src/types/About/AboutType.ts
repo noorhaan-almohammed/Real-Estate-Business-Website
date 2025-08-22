@@ -1,6 +1,6 @@
-
 // our value card type
 
+import type { Timestamp } from "firebase/firestore";
 import type { ReactNode } from "react";
 
 export interface valueCard {
@@ -21,6 +21,8 @@ export interface OurAchievementsCard {
   id: string;
   title: string;
   description: string;
+  createdAt?: Timestamp;
+  updateddAt?: Timestamp;
 }
 
 export interface OurAchievementsSectionType {
@@ -44,16 +46,18 @@ export interface NavigatingEstateinExperienceSectionType {
 
 // Meet the Estatein Team card type
 
-export interface MeetEstateinTeamCard {
+export interface TeamMember {
   id: string;
   image: string;
   name: string;
   job: string;
+  createdAt?: Timestamp;
+  updateddAt?: Timestamp;
 }
 export interface MeetEstateinTeamCardSectionType {
   headline: string;
   description: string;
-  properties: MeetEstateinTeamCard[];
+  properties: TeamMember[];
 }
 
 // Our Valued Clients card type

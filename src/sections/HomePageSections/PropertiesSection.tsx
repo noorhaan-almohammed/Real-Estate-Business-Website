@@ -13,8 +13,10 @@ import { subscribeToProperties } from "../../redux/thunks/propertiesActions";
 import PropertiesCardSkeleton from "../../components/cards/PropertiesCardSkeleton";
 
 function PropertiesSection({ data }: { data: FeaturedPropertiesSectionType }) {
-const dispatch = useDispatch<AppDispatch>();
-  const { items, loading, error } = useSelector((state: RootState) => state.properties);
+  const dispatch = useDispatch<AppDispatch>();
+  const { items, loading, error } = useSelector(
+    (state: RootState) => state.properties
+  );
 
   useEffect(() => {
     const unsubscribe = dispatch(subscribeToProperties());
@@ -23,7 +25,7 @@ const dispatch = useDispatch<AppDispatch>();
     };
   }, [dispatch]);
 
-  if (error) return <p>خطأ: {error}</p>;
+  if (error) return <p>error: {error}</p>;
 
   return (
     <Container>
@@ -42,8 +44,11 @@ const dispatch = useDispatch<AppDispatch>();
         link={data.button.link}
         cards={
           loading
-            ? Array.from({ length: 3 }).map((_, i) => <PropertiesCardSkeleton key={i} />)
-            : items.map((property) => (
+            ? Array.from({ length: 3 }).map((_, i) => (
+              <PropertiesCardSkeleton key={i} />
+            ))
+            : items.length > 0
+              ? items.map((property) => (
                 <PropertiesCard
                   key={property.id}
                   image={property.imageUrls[0]}
@@ -51,14 +56,23 @@ const dispatch = useDispatch<AppDispatch>();
                   fullDescription={property.description}
                   price={"$".concat(property.price.toLocaleString())}
                   details={[
-                    { icon: <Bedroom />, label: property.bedrooms.toString().concat("-BedRoom") },
-                    { icon: <Bathroom />, label: property.bathrooms.toString().concat("-BathRoom") },
+                    {
+                      icon: <Bedroom />,
+                      label: property.bedrooms.toString().concat("-BedRoom"),
+                    },
+                    {
+                      icon: <Bathroom />,
+                      label: property.bathrooms.toString().concat("-BathRoom"),
+                    },
                     { icon: <Villa />, label: property.type },
                   ]}
                   showInfo={true}
                   btnLink={`/properties/${property.id}`}
                   btnText={`View Property Details`}
                 />
+              ))
+              : Array.from({ length: 3 }).map((_, i) => (
+                <PropertiesCardSkeleton key={i} />
               ))
         }
       />
